@@ -1,19 +1,22 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import Component from '../component/Com';
+import {useNavigation} from '@react-navigation/native';
+import Profile from './Profile';
+import Button from '../component/Button';
+
 
 const Settings = () => {
+  const navigation=useNavigation();
+  const name="Settings"
+  const data="Settings"
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text style={styles.textstyle}>Settings</Text>
+    <View>
+      <Component data={data}/>
+      <Button name={name}onPress={()=>navigation.navigate(Profile)}/>
     </View>
   );
 };
 
 export default Settings;
 
-const styles = StyleSheet.create({
-  textstyle: {
-    fontSize: 20,
-    color: 'black',
-  },
-});
